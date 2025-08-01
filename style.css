@@ -1,0 +1,50 @@
+body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Dark background */
+            color: #e2e8f0;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        /* Custom styles for the animated background canvas */
+        #background-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place behind other content */
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a202c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4a5568;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #718096;
+        }
+        /* Style for the vertical sidebar on desktop */
+        @media (min-width: 768px) {
+            #vertical-navbar {
+                width: 16rem; /* Tailwind 'w-64' */
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+            main {
+                margin-left: 16rem; /* Offset for the vertical navbar */
+            }
+        }
+        /* Hidden mobile menu styling */
+        .mobile-menu-container {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu-container.open {
+            transform: translateX(0);
+        }

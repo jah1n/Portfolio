@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD. Jahin Miah - Portfolio</title>
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Three.js for the animated background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="leading-relaxed">
+
+    <!-- Animated Background Canvas -->
+    <canvas id="background-canvas"></canvas>
+
+    <!-- Vertical Navigation Bar -->
+    <nav id="vertical-navbar" class="fixed z-50 top-0 left-0 h-screen w-full md:w-64 bg-gray-900 bg-opacity-70 backdrop-blur-md transition-all duration-300 transform md:transform-none -translate-x-full md:-translate-x-0 mobile-menu-container">
+        <div class="p-8 flex flex-col items-center h-full">
+            <a href="#home" class="text-3xl font-black text-cyan-400 hover:text-cyan-300 transition-colors mb-8">
+                MD. Jahin Miah
+            </a>
+            <div class="flex-grow flex flex-col space-y-6 text-center">
+                <a href="#home" class="nav-link text-lg font-semibold hover:text-cyan-400 transition-colors">Home</a>
+                <a href="#about" class="nav-link text-lg font-semibold hover:text-cyan-400 transition-colors">About</a>
+                <a href="#projects" class="nav-link text-lg font-semibold hover:text-cyan-400 transition-colors">Projects</a>
+                <a href="#education" class="nav-link text-lg font-semibold hover:text-cyan-400 transition-colors">Education</a>
+                <a href="#skills" class="nav-link text-lg font-semibold hover:text-cyan-400 transition-colors">Skills</a>
+                <a href="#hobbies" class="nav-link text-lg font-semibold hover:text-cyan-400 transition-colors">Hobbies</a>
+                <a href="#contact" class="nav-link text-lg font-semibold hover:text-cyan-400 transition-colors">Contact</a>
+            </div>
+            <!-- Social Media Links in Navbar Footer -->
+            <div class="mt-auto flex space-x-6 text-2xl">
+                <a href="https://github.com/jah1n" target="_blank" class="hover:text-cyan-400 transition-colors"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/jah1n" target="_blank" class="hover:text-cyan-400 transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="https://facebook.com/abdullahal.jahin.376" target="_blank" class="hover:text-cyan-400 transition-colors"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" class="md:hidden fixed top-4 left-4 z-50 text-2xl text-cyan-400 focus:outline-none">
+        <i class="fas fa-bars"></i>
+    </button>
+    <button id="close-menu-btn" class="hidden fixed top-4 left-4 z-50 text-2xl text-cyan-400 focus:outline-none">
+        <i class="fas fa-times"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main class="md:ml-64 transition-all duration-300">
+        <!-- Home Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center text-center px-4 md:px-8 py-20">
+            <div class="relative z-10">
+              
+                <h1 class="text-4xl md:text-6xl font-bold mb-2">Hello, I'm <span class="text-cyan-400">MD. Jahin Miah</span></h1>
+                <p class="text-xl md:text-3xl font-light text-gray-400 mb-6">A Passionate CSE Student</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="container mx-auto px-4 py-20 md:px-8 min-h-screen flex items-center">
+            <div class="max-w-6xl mx-auto text-center relative z-10 w-full">
+                <h2 class="text-3xl md:text-5xl font-bold mb-8 text-cyan-400">About Me</h2>
+                <div class="bg-gray-900 bg-opacity-70 backdrop-blur-md p-8 rounded-xl shadow-lg">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                        <!-- Image Section -->
+                        <div class="lg:col-span-1 flex justify-center">
+                            <img src="jahin.jpeg" alt="MD. Jahin Miah" class="rounded-3xl object-cover w-full h-auto max-w-sm">
+                        </div>
+                        <!-- Hello & Bio Section -->
+                        <div class="lg:col-span-2 text-left">
+                            <h3 class="text-3xl md:text-4xl font-bold mb-4 text-cyan-400">HELLO!</h3>
+                            <p class="text-lg md:text-xl text-gray-300 mb-4">
+                                I'm MD. Jahin Miah, a passionate and creative individual driven by curiosity and a desire to solve real-world problems through technology and design. With a strong academic foundation and hands-on experience, I aim to blend innovation and functionality in everything I do. I'm continuously seeking opportunities to grow, collaborate, and make a meaningful impact.
+                            </p>
+                            <!-- Contact Info Buttons -->
+                            
+                            <div id="copy-message" class="mt-4 hidden text-sm text-center text-green-400"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="container mx-auto px-4 py-20 md:px-8 min-h-screen flex items-center">
+            <div class="max-w-6xl mx-auto text-center relative z-10 w-full">
+                <h2 class="text-3xl md:text-5xl font-bold mb-8 text-cyan-400">Projects</h2>
+                <div class="grid md:grid-cols-1 lg:grid-cols-1 gap-8">
+                    <!-- Project Card 1 -->
+                    <div class="bg-gray-900 bg-opacity-70 backdrop-blur-md rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+                        <div class="p-6 text-left">
+                            <h3 class="text-2xl font-semibold mb-2 text-cyan-400">MedPharma App</h3>
+                            <p class="text-gray-400 mb-4">
+                                A Java-based application with an admin login (unique ID). Admins can add medicines and accessories, track expired items, search inventory, and manage order requests. Customers can search items, place orders, and pay bills. I developed four pages covering both frontend and backend functionality.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="container mx-auto px-4 py-20 md:px-8 min-h-screen flex items-center">
+            <div class="max-w-6xl mx-auto text-center relative z-10 w-full">
+                <h2 class="text-3xl md:text-5xl font-bold mb-8 text-cyan-400">Education</h2>
+                <div class="bg-gray-900 bg-opacity-70 backdrop-blur-md rounded-xl p-6 shadow-lg hover:scale-105 transition-transform duration-300">
+                    <div class="text-gray-400 text-left text-base space-y-4">
+                        <div>
+                            <p class="font-bold text-white">2019</p>
+                            <p class="font-bold text-lg">SSC</p>
+                            <p>Udayan Secondary High School</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-white">2021</p>
+                            <p class="font-bold text-lg">HSC</p>
+                            <p>Alekanda Govt College</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-white">Current</p>
+                            <p class="font-bold text-lg">CSE</p>
+                            <p>University of Asia Pacific</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section id="skills" class="container mx-auto px-4 py-20 md:px-8 min-h-screen flex items-center">
+            <div class="max-w-6xl mx-auto text-center relative z-10 w-full">
+                <h2 class="text-3xl md:text-5xl font-bold mb-8 text-cyan-400">Skills</h2>
+                <div class="bg-gray-900 bg-opacity-70 backdrop-blur-md rounded-xl p-6 shadow-lg hover:scale-105 transition-transform duration-300">
+                    <ul class="text-gray-400 text-left text-base list-none list-inside space-y-2">
+                        <li><i class="fab fa-cuttlefish text-cyan-400 mr-2"></i> C/C++</li>
+
+                        <li><i class="fab fa-java text-cyan-400 mr-2"></i> Java</li>
+                        <li><i class="fas fa-database text-cyan-400 mr-2"></i> SQL</li>
+                        <li><i class="fab fa-python text-cyan-400 mr-2"></i> Python (Learning)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hobbies Section -->
+        <section id="hobbies" class="container mx-auto px-4 py-20 md:px-8 min-h-screen flex items-center">
+            <div class="max-w-3xl mx-auto text-center relative z-10 w-full">
+                <h2 class="text-3xl md:text-5xl font-bold mb-8 text-cyan-400">Hobbies</h2>
+                <div class="bg-gray-900 bg-opacity-70 backdrop-blur-md p-8 rounded-xl shadow-lg">
+                    <p class="text-lg mb-6">In my free time, I enjoy a variety of activities to relax and stay active.</p>
+                    <ul class="text-lg text-white space-y-2 text-left list-disc list-inside">
+                        <li>Travelling</li>
+                        <li>Watching movie</li>
+                        <li>Bike riding</li>
+                        <li>Hiking</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="container mx-auto px-4 py-20 md:px-8 min-h-screen flex items-center">
+            <div class="max-w-3xl mx-auto text-center relative z-10 w-full">
+                <h2 class="text-3xl md:text-5xl font-bold mb-8 text-cyan-400">Contact</h2>
+                <div class="bg-gray-900 bg-opacity-70 backdrop-blur-md p-8 rounded-xl shadow-lg">
+                    <p class="text-lg mb-6">Have a project in mind or just want to say hi? Feel free to reach out!</p>
+                    <div class="space-y-4">
+                        <p class="text-lg text-white">Email: <span class="text-cyan-400">mdjahinmiah231@gmail.com</span></p>
+                        <p class="text-lg text-white">Phone: <span class="text-cyan-400">01302696453</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 bg-opacity-70 backdrop-blur-md text-center py-6 px-4 md:ml-64 transition-all duration-300">
+        <p>&copy; 2024 MD. Jahin Miah. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Animations, Scrolling, and Functionality -->
+    <script src="script.js">
+       
+    </script>
+</body>
+</html>
